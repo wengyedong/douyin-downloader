@@ -22,8 +22,10 @@
 
 ## 安装依赖
 
+使用 `requirements.txt` 文件安装依赖：
+
 ```bash
-pip install requests beautifulsoup4 tqdm
+pip install -r requirements.txt
 ```
 
 ## 使用方法
