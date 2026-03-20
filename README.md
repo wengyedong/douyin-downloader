@@ -12,9 +12,6 @@
 - 提供下载进度条
 - 包含网络请求重试机制
 - 详细的日志记录
-- 支持仅获取视频信息而不下载视频
-- 支持将视频信息输出到 Markdown 文件
-- 自动下载封面图并在 Markdown 文件中使用本地路径
 
 ## 依赖项
 
@@ -45,18 +42,6 @@ python douyin_downloader.py <抖音视频链接> --output <输出目录路径>
 python douyin_downloader.py <抖音视频链接> -o <输出目录路径>
 ```
 
-### 仅获取视频信息（不下载）
-
-```bash
-python douyin_downloader.py <抖音视频链接> --info
-```
-
-### 将视频信息输出到 Markdown 文件
-
-```bash
-python douyin_downloader.py <抖音视频链接> --info --output-md <Markdown文件路径>
-```
-
 ## 示例
 
 ### 下载抖音视频到默认目录
@@ -71,29 +56,12 @@ python douyin_downloader.py https://v.douyin.com/KqkNll9Dn3g/
 python douyin_downloader.py https://v.douyin.com/KqkNll9Dn3g/ --output D:\Downloads
 ```
 
-### 仅获取视频信息
-
-```bash
-python douyin_downloader.py https://v.douyin.com/KqkNll9Dn3g/ --info
-```
-
-### 获取视频信息并输出到 Markdown 文件
-
-```bash
-python douyin_downloader.py https://v.douyin.com/KqkNll9Dn3g/ --info --output-md video_info.md
-```
-
 ## 输出文件
 
 程序会在指定的输出目录下创建以下文件：
 
 - `output/<视频ID>/<视频ID>.mp4` - 下载的视频文件
-- `output/<视频ID>/<视频ID>_info.json` - 视频信息描述文件，包含标题、时长、封面等信息
-
-当使用 `--info --output-md` 参数时，会在指定的路径创建以下文件：
-
-- `<指定路径>.md` - 视频信息 Markdown 文件
-- `<指定路径所在目录>/<视频ID>_cover.jpg` - 下载的封面图文件
+- `output/<视频ID>/<视频ID>_info.json` - 视频信息描述文件，包含标题、时长、视频ID、原始链接等信息
 
 ## 视频信息描述文件格式
 
@@ -101,7 +69,6 @@ python douyin_downloader.py https://v.douyin.com/KqkNll9Dn3g/ --info --output-md
 {
   "title": "视频标题",
   "duration": "视频时长",
-  "thumbnail": "封面图链接",
   "tiktok_id": "视频ID",
   "original_url": "原始抖音链接"
 }
