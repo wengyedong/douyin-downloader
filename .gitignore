@@ -1,0 +1,17 @@
+# 测试生成的文件
+*_cover.jpg
+
+# 输出目录
+output/
+
+# 临时文件
+*.tmp
+*.temp
+
+# IDE 相关文件
+.vscode/
+.idea/
+
+# 操作系统相关文件
+Thumbs.db
+.DS_Store
