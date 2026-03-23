@@ -147,7 +147,7 @@ def download_douyin_video(douyin_url, output_dir=os.getcwd()):
                 
                 # 下载视频并显示进度条
                 with open(video_filename, "wb") as f:
-                    with tqdm(total=total_size, unit='B', unit_scale=True, unit_divisor=1024, desc=title) as pbar:
+                    with tqdm(total=total_size, unit='B', unit_scale=True, unit_divisor=1024, desc='下载中') as pbar:
                         for chunk in video_response.iter_content(chunk_size=8192):
                             if chunk:
                                 f.write(chunk)
